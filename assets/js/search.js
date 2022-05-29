@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 ---
 ---
+=======
+>>>>>>> c63ec2844568ad469854183617d67c436f86612b
 // from https://github.com/pmarsceill/just-the-docs/blob/master/assets/js/just-the-docs.js#L47
 
 (function (jtd, undefined) {
@@ -49,18 +52,28 @@ jtd.onReady = function(ready) {
 
 function initSearch() {
     var request = new XMLHttpRequest();
+<<<<<<< HEAD
     request.open('GET', '{{ "assets/js/search-data.json" | relative_url }}', true);
+=======
+    request.open('GET', '/notebookposts/assets/js/search-data.json', true);
+>>>>>>> c63ec2844568ad469854183617d67c436f86612b
   
     request.onload = function(){
       if (request.status >= 200 && request.status < 400) {
         // Success!
         var data = JSON.parse(request.responseText);
         
+<<<<<<< HEAD
         {% if site.search_tokenizer_separator != nil %}
         lunr.tokenizer.separator = {{ site.search_tokenizer_separator }}
         {% else %}
         lunr.tokenizer.separator = /[\s\-/]+/
         {% endif %}
+=======
+        
+        lunr.tokenizer.separator = /[\s\-/]+/
+        
+>>>>>>> c63ec2844568ad469854183617d67c436f86612b
         
         var index = lunr(function () {
           this.ref('id');
